@@ -15,11 +15,15 @@ def monitor_resources(cpu_threshold=80, memory_threshold=80):
     memory_usage = memory_info.percent
     
     if cpu_usage > cpu_threshold:
-        logging.warning(f"High CPU usage detected: {cpu_usage}% b \
+        logging.WARNING(f"High CPU usage detected: {cpu_usage}% b \
             \n please check system.")
+    else:
+        logging.info(f"INFO system is ok")
     if memory_usage > memory_threshold: 
         logging.warning(f"High Memory usage detected: {memory_usage}% \
                         \n please check system.")
+    else:
+        logging.INFO(f"INFO system is ok")
     return cpu_usage, memory_usage
 
 
