@@ -42,23 +42,26 @@ def query_logs(log_file, pattern):
 
 # Main to run the program
 def main():
-    while True:
-        cpu_usage, memory_usage = monitor_resources()
-        print(f"CPU Usage: {cpu_usage}%, \nMemory Usage: {memory_usage}%")
-        
-        # Check logs for warnings and errors
-        warning_logs = query_logs('system_2.log', 'WARNING')
-        error_logs = query_logs('system_2.log', 'ERROR')
-        
-        if warning_logs:
-            avg_warning = calculate_average(warning_logs)
-            print(f"Average Warning Log Value: {avg_warning}")
+    try:
+        while True:
+            cpu_usage, memory_usage = monitor_resources()
+            print(f"CPU Usage: {cpu_usage}%, \nMemory Usage: {memory_usage}%")
             
-        if error_logs:
-            avg_error = calculate_average(error_logs)
-            print(f"Average Error Log Value: {avg_error}")
-        
-        time.sleep(5)
-        
+            # Check logs for warnings and errors
+            warning_logs = query_logs('system_2.log', 'WARNING')
+            error_logs = query_logs('system_2.log', 'ERROR')
+            
+            if warning_logs:
+                avg_warning = calculate_average(warning_logs)
+                print(f"Average Warning Log Value: {avg_warning}")
+                
+            if error_logs:
+                avg_error = calculate_average(error_logs)
+                print(f"Average Error Log Value: {avg_error}")
+            
+            time.sleep(5)
+    except KeyboardInterrupt:
+        print("Program terminated gracefully...")
+            
 if __name__ == "__main__":
     main()
