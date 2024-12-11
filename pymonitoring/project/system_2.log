@@ -52,3 +52,9 @@
  please check system.
 2024-12-10 10:28:26,418 WARNING High Memory usage detected: 86.3%                         
  please check system.
+2024-12-10 11:02:03,146 INFO INFO system is ok
+2024-12-10 11:02:03,146 WARNING High Memory usage detected: 84.4%                         
+ please check system.
+2024-12-10 11:02:09,167 INFO INFO system is ok
+2024-12-10 11:02:09,168 WARNING High Memory usage detected: 84.5%                         
+ please check system.
